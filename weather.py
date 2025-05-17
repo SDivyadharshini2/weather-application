@@ -38,8 +38,8 @@ try:
     canvas.create_image(0, 0, anchor="nw", image=background_image)
 except Exception as e:
     messagebox.showerror("Error", f"Failed to load background image: {e}")
-frame = tk.Frame(root, bg="white", bd=10, relief="solid", padx=20, pady=20)
-frame.place(relx=0.5, rely=0.5, anchor="center")  # Center the frame
+frame = tk.Frame(root, relief="solid", padx=20, pady=20,bg="white")
+frame.place(relx=0.5, rely=0.5, anchor="center")  
 instructions_label = tk.Label(frame, text="Enter city name to get weather info:", font=("Arial", 14), bg="white")
 instructions_label.pack(pady=10)
 city_entry = tk.Entry(frame, font=("Arial", 14), bd=2, relief="solid", width=20)
@@ -47,6 +47,6 @@ city_entry.pack(pady=10)
 search_button = tk.Button(frame, text="Search", font=("Arial", 14), command=on_search_button_click, bg="#4CAF50", fg="white", bd=2, relief="solid")
 search_button.pack(pady=10)
 weather_info = tk.StringVar()
-weather_info_label = tk.Label(frame, textvariable=weather_info, font=("Arial", 12), bg="white", justify="left")
+weather_info_label = tk.Label(frame, textvariable=weather_info, font=("Arial", 12), justify="left")
 weather_info_label.pack(pady=20)
 root.mainloop()
